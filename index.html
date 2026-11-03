@@ -389,8 +389,80 @@ footer{background:#0c1d4d}
 .dv::before{content:"";position:absolute;top:-1px;left:50%;width:190px;height:38px;margin-left:-95px;background:#fff;clip-path:polygon(0 0,100% 0,89% 100%,11% 100%);z-index:2}
 .dv::after{content:"";position:absolute;top:7px;left:50%;width:22px;height:22px;margin-left:-11px;background:var(--navy);-webkit-mask:url("assets/icon.png") center/contain no-repeat;mask:url("assets/icon.png") center/contain no-repeat;z-index:3}
 @media(max-width:600px){.dv::before{width:150px;margin-left:-75px;height:32px}.dv::after{top:5px}}
+/* v4 */
+.hero h1{max-width:none}.hero h1 em{white-space:nowrap}
+.hg{grid-template-columns:1.2fr .8fr;gap:56px}
+.hcard{max-width:440px;justify-self:end;width:100%}
+.hero .wrap{padding-bottom:100px}
+.facts{margin-top:0;background:var(--tint);padding-top:clamp(40px,6vw,72px)}
+.problems{padding-top:clamp(56px,7vw,96px)}
+.pick span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cc{grid-template-columns:repeat(3,1fr)!important}
+.cc .rw{grid-template-columns:1fr;gap:2px}
+.rw.rz{border-left:3px solid var(--orange);padding:8px 0 8px 12px;background:rgba(251,104,53,.06);border-radius:0 10px 10px 0;margin-top:16px}
+.rw.rz b{color:var(--orange)}.rw.rz span{color:var(--navy);font-weight:600}
+@media(max-width:1000px){.cc{grid-template-columns:1fr 1fr!important}}
+@media(max-width:700px){.cc{grid-template-columns:1fr!important}}
+.hg{grid-template-columns:1.3fr .7fr}
+.hcard img{max-height:min(58vh,560px);object-fit:cover;object-position:50% 12%}
+@media(max-width:860px){.hcard img{max-height:none}}
+/* team gallery */
+.gal{display:flex;gap:12px;height:600px;margin-top:40px}
+.gm{position:relative;flex:1 1 0;min-width:0;overflow:hidden;border-radius:22px;background:#e9e3dc;cursor:pointer;transition:flex-grow .7s cubic-bezier(.3,.8,.2,1),box-shadow .5s;outline:none}
+.gm.on{flex-grow:3.2;cursor:default;box-shadow:0 30px 50px -30px rgba(16,38,98,.55)}
+.gm:focus-visible{box-shadow:0 0 0 3px var(--orange)}
+.gm img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;transition:transform 1s,filter .6s;filter:saturate(.75)}
+.gm.on img{filter:none}.gm:not(.on):hover img{transform:scale(1.04)}
+.gm::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,42,.9),rgba(10,18,42,.35) 45%,transparent 70%);pointer-events:none}
+.gic{position:absolute;left:50%;top:42%;width:72px;height:72px;margin:-36px 0 0 -36px;background:var(--navy);opacity:.3;-webkit-mask:url(assets/icon.png) center/contain no-repeat;mask:url(assets/icon.png) center/contain no-repeat}
+.gn{position:absolute;left:18px;right:14px;bottom:20px;z-index:2;color:#fff;font-weight:800;font-size:16px;line-height:1.2;transition:opacity .3s .3s}
+.gm.on .gn{opacity:0;transition-delay:0s}
+.gi{position:absolute;left:0;bottom:0;z-index:2;width:min(470px,100vw);padding:0 30px 30px;color:#fff;opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s;pointer-events:none}
+.gm.on .gi{opacity:1;transform:none;transition:opacity .5s .35s,transform .5s .35s;pointer-events:auto}
+.gi h3{font-size:26px;color:#fff}.gi b{display:block;color:var(--beige);font-size:14px;margin:6px 0 10px}.gi p{font-size:14.5px;color:#e6e9f4;line-height:1.55}
+.gm.np .gi h3,.gm.np .gn{color:#fff}
+/* founder card */
+.gm.own{background:var(--navy);perspective:1600px;overflow:visible;box-shadow:0 0 0 0 transparent}
+.gm.own::after{display:none}
+.gm.own.on{box-shadow:0 34px 60px -30px rgba(16,38,98,.75)}
+.fx{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,.2,.2,1)}
+.own.flp .fx{transform:rotateY(180deg)}
+.fr,.bk{position:absolute;inset:0;border-radius:22px;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;background:linear-gradient(160deg,#1d3f94,#102662 60%)}
+.fr::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#102662 8%,rgba(16,38,98,.85) 38%,rgba(16,38,98,0) 64%);pointer-events:none}
+.own img{filter:none}
+.own .lab{display:inline-block;background:var(--orange);color:#fff;font-size:13px;font-weight:600;padding:4px 14px;border-radius:999px;margin-bottom:12px}
+.own .gi b{font-weight:600}
+.flip{margin-top:14px;display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--navy);border:0;border-radius:999px;padding:11px 20px;font:700 14px var(--f);cursor:pointer;transition:transform .2s,background .2s}
+.flip:hover{transform:translateY(-2px);background:var(--beige)}
+.bk{transform:rotateY(180deg);padding:30px;color:#fff;display:flex;flex-direction:column;overflow:auto;border:1px solid rgba(202,174,153,.35)}
+.bk h3{font-size:26px;color:#fff;margin-bottom:14px}
+.bk ul{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:10px}
+.bk li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.45;color:#e6e9f4}
+.bk li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.bk q{display:block;quotes:none;padding-left:14px;border-left:3px solid var(--orange);color:var(--beige);font-weight:600;font-size:15px;line-height:1.45;margin:auto 0 16px}
+.bk .lab{align-self:flex-start}
+.gm.np::after{background:linear-gradient(to top,rgba(16,38,98,.95),rgba(16,38,98,.55) 30%,rgba(16,38,98,0) 55%)}
+.bk .flip{align-self:flex-start;margin:0;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.bk .flip:hover{background:rgba(255,255,255,.1)}
+.own:not(.on) .gi{visibility:hidden}
+@media(max-width:1000px){.gal{height:560px}.gm.on{flex-grow:4}}
+@media(max-width:760px){
+.gal{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:32px -20px 0;padding:0 20px 24px;gap:12px}
+.gal::-webkit-scrollbar{display:none}
+.gm,.gm.on{flex:0 0 84vw;height:560px;scroll-snap-align:center;cursor:default}
+.gm .gn{display:none}.gm .gi,.own:not(.on) .gi{opacity:1;transform:none;visibility:visible;pointer-events:auto;width:100%;padding:0 20px 22px}
+.gi h3,.bk h3{font-size:22px}.gi p{font-size:14px}
+.bk{padding:22px 20px}.bk li{font-size:13.5px}.bk ul{gap:8px}.bk q{font-size:14px}
+.gm img{filter:none}
+}
+/* phone */
+.telw{position:relative;display:block}
+.telw.has input{padding-right:130px}
+.ccb{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--navy);background:var(--beige);border-radius:999px;padding:4px 10px;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;max-width:120px;overflow:hidden;text-overflow:ellipsis}
+.telw.has .ccb{opacity:1}
 /* mobile fixes */
-@media(max-width:860px){.hero .hcard{justify-self:center;width:100%}}
+@media(max-width:860px){.hero .hcard{justify-self:center;width:100%;max-width:340px}.hero .wrap{padding-bottom:72px}}
+@media(max-width:600px){.hero h1{font-size:clamp(34px,10.2vw,46px)}}
 .hero .hg{padding-right:24px}
 @media(max-width:600px){.hero .hg{padding-right:20px}}
 form{grid-template-columns:minmax(0,1fr)}
@@ -430,7 +502,7 @@ input,select,textarea{width:100%;min-width:0;max-width:100%}
 <div class="sq"></div>
 <div class="wrap hg"><div class="hl">
 <span class="eyebrow">Бухгалтерський і фінансовий супровід ФОП та ТОВ</span>
-<h1>Ваші цифри <em>під контролем</em></h1>
+<h1>Ваші цифри<br><em>під контролем</em></h1>
 <p class="lead">Ведемо облік, вчасно здаємо звітність і пояснюємо, що відбувається з фінансами вашого бізнесу. Щоб рішення спиралися на факти, а не на здогадки.</p>
 <div class="cta"><a class="btn" href="#contact">Отримати безкоштовну консультацію</a><a class="btn ghost" href="#services">Переглянути послуги</a></div>
 <ul class="hb"><li>Звітність і податки вчасно</li><li>Пояснюємо цифри простою мовою</li><li>Перша консультація безкоштовна</li></ul>
@@ -446,14 +518,14 @@ input,select,textarea{width:100%;min-width:0;max-width:100%}
 <div><b>200+</b><span>працівників у компанії, де засновниця керувала фінансами</span></div>
 </div></div>
 
-<section class="problems dv" id="problems"><div class="wrap pg">
+<section class="problems" id="problems"><div class="wrap pg">
 <div><span class="eb">Знайома ситуація?</span><h2>З чим до нас приходять</h2><p class="sub">Більшість власників звертаються не тому, що «треба бухгалтера». А тому, що втратили відчуття контролю над фінансами. Ми повертаємо його: облік стає прозорим, а цифри зрозумілими.</p><p style="margin-top:28px"><a class="btn" href="#contact">Розібрати мою ситуацію</a></p></div>
 <ol class="plist"><li>Звіти здаються, але ніхто не пояснює, що вони означають для бізнесу</li><li>Гроші на рахунку є, а скільки бізнес реально заробляє, незрозуміло</li><li>Податкова блокує накладні, або банк вимагає документи з фінмоніторингу</li><li>Бухгалтер пішов, і облік доводиться відновлювати з нуля</li><li>Бізнес росте, а контроль за касою, складом і людьми не встигає</li><li>Потрібно відкрити ФОП чи ТОВ і одразу не помилитися із системою оподаткування</li></ol>
 </div></section>
 
 <section class="services" id="services"><div class="wrap">
 <span class="eb">Послуги</span><h2>Повний цикл обліку для ФОП і ТОВ</h2>
-<p class="sub">Відкрийте папку, оберіть потрібну послугу, і ми підготуємо консультацію саме під неї. Хочете знати вартість одразу? <a href="#contact" data-tab="calc">Заповніть анкету</a>.</p>
+<p class="sub">Відкрийте папку й позначте одну або кілька послуг, і ми підготуємо консультацію саме під них. Хочете знати вартість одразу? <a href="#contact" data-tab="calc">Заповніть анкету</a>.</p>
 <div class="folders">
 <div class="folder"><div class="ftab">ФОП</div><div class="fbody"><button class="fhead" aria-expanded="false" aria-controls="fop"><span><b>Для ФОП</b><small>6 послуг. Для підприємців, які хочуть працювати спокійно: без штрафів, перевищених лімітів і несподіванок від податкової.</small></span><i></i></button><div class="fgrid"><div class="fin"><div class="panel" id="fop">
 <button class="card" aria-pressed="false"><h3>Відкриття ФОП</h3><p>Підберемо КВЕДи та оптимальну групу оподаткування. Зареєструємо онлайн, без вашої участі.</p><span>Обрати</span></button>
@@ -480,22 +552,32 @@ input,select,textarea{width:100%;min-width:0;max-width:100%}
 
 <section class="proof dv" id="cases"><div class="wrap">
 <span class="eb">Результати</span><h2 style="max-width:22ch">Досвід, перевірений великими бізнесами</h2>
-<p class="sub">Ці результати засновниця Happy Finance отримала на керівних посадах в обліку та фінансах. Той самий підхід ми переносимо в облік кожного клієнта, незалежно від масштабу.</p>
+<p class="sub">Реальні історії з кар’єри засновниці Happy Finance: від бухгалтера мережі філій до фінансового директора компанії з понад 200 працівниками. Той самий підхід ми переносимо в облік кожного клієнта, незалежно від масштабу.</p>
 <div class="grid" style="margin-top:40px">
 <div><span class="tag">Дистрибуція · понад 200 працівників</span>
 <h3 class="ch">Нестача на складі: з 1,5 млн до 10-12 тис грн на місяць</h3>
-<div class="rw"><b>Ситуація</b><span>Компанія переживала перепродаж бізнесу, перенесення даних з однієї бази в іншу, переїзд складу, зміну всіх власників і управлінців.</span></div>
-<div class="rw"><b>Що зробили</b><span>За 3 роки збудували весь фінансовий відділ, змінили документообіг і команду. Змінили керівників транспортного відділу через крадіжку, знайшли крадіжки в касі, касира звільнили, вибудували систему контролю.</span></div></div>
+<div class="rw"><b>Роль</b><span>Фінансовий директор, 3 роки.</span></div>
+<div class="rw"><b>Ситуація</b><span>Прийшла в момент перепродажу бізнесу: усю інформацію переносили з однієї бази в іншу, склад переїжджав, змінювалися всі власники й управлінці.</span></div>
+<div class="rw"><b>Що зробила</b><span>Побудувала фінансовий відділ з нуля, змінила документообіг і команду. Замінила керівників транспортного відділу через крадіжку, виявила крадіжки в касі (касира звільнили) і вибудувала систему контролю.</span></div>
+<div class="rw rz"><b>Результат</b><span>Нестача на складі скоротилась з 1,5 млн до 10-12 тис грн на місяць.</span></div></div>
 <div class="bars" role="img" aria-label="Нестача на складі зменшилась з 1,5 млн грн до 10-12 тис грн на місяць">
 <div><div class="cap">Нестача до змін</div><div class="bar"><i><span id="cnt">1 500 000</span>&nbsp;грн</i></div></div>
 <div><div class="cap">Після змін, на місяць</div><div class="bar after"><i></i><b>10-12 тис грн</b></div></div></div></div>
 <div class="cc">
-<article><span class="tag">Мережа аптек</span><h3>Помилки в касових звітах: виправляти до закриття зміни, а не після</h3>
-<div class="rw"><b>Ситуація</b><span>Звіти доходили до бухгалтерії вже після закриття зміни фармацевтами, і виправити помилки було важко або неможливо.</span></div>
-<div class="rw"><b>Що зробили</b><span>Провели перші навчання для фармацевтів, створили інструкції, презентації та шпаргалки для новачків.</span></div></article>
-<article><span class="tag">Кав’ярня і кондитерський цех</span><h3>З обліку в зошитах до експорту в Ізраїль</h3>
-<div class="rw"><b>Ситуація</b><span>Облік вели лише в зошитах. Потрібно було збудувати систему й розвинути кондитерський цех.</span></div>
-<div class="rw"><b>Що зробили</b><span>За 3 роки збудували облік у 1С і розвинули напрямок: експорт в Ізраїль, оптові продажі в місті, каталоги, етикетки, технічні документи, фінансові показники. У керуванні було 50 людей.</span></div></article>
+<article><span class="tag">Управлінська компанія · 16 філій</span><h3>Каса й банк для 16 філій, а через рік посада головного бухгалтера</h3>
+<div class="rw"><b>Роль</b><span>Старший бухгалтер з каси, банківських платежів, авансових звітів і послуг.</span></div>
+<div class="rw"><b>Що робила</b><span>Вела касу, банківські платежі, авансові звіти та послуги одразу для всіх 16 філій компанії.</span></div>
+<div class="rw rz"><b>Результат</b><span>Через рік повернулася в магазин цієї ж компанії, де колись починала, вже головним бухгалтером.</span></div></article>
+<article><span class="tag">Мережа аптек «Фоззі Фарм»</span><h3>Помилки в касових звітах: виправляти до закриття зміни, а не після</h3>
+<div class="rw"><b>Роль</b><span>Старший бухгалтер з касової дисципліни по всіх аптеках мережі.</span></div>
+<div class="rw"><b>Ситуація</b><span>Звіти надходили до бухгалтерії вже після закриття зміни фармацевтами, тож помилки було важко або неможливо виправити.</span></div>
+<div class="rw"><b>Що зробила</b><span>Вирішила проблему на її джерелі, через навчання: провела перші навчання для фармацевтів, створила інструкції, презентації та шпаргалки для новачків.</span></div>
+<div class="rw rz"><b>Результат</b><span>Система навчання й інструкцій з касової дисципліни для всієї мережі.</span></div></article>
+<article><span class="tag">Кав’ярня і кондитерський цех · Кропивницький</span><h3>З обліку в зошитах до експорту в Ізраїль</h3>
+<div class="rw"><b>Роль</b><span>Бухгалтер, згодом директор кафе, 3 роки.</span></div>
+<div class="rw"><b>Ситуація</b><span>Облік вели тільки в зошитах. Кондитерський цех потрібно було будувати й розвивати.</span></div>
+<div class="rw"><b>Що зробила</b><span>Побудувала облік у 1С. Як директор кафе відповідала за побудову й розвиток кондитерського цеху.</span></div>
+<div class="rw rz"><b>Результат</b><span>Експорт в Ізраїль, оптові продажі в місті, каталоги, етикетки, технічні документи й фінансові показники. В управлінні 50 людей.</span></div></article>
 </div></div></section>
 
 <section class="clients" id="clients"><div class="wrap">
@@ -528,33 +610,22 @@ input,select,textarea{width:100%;min-width:0;max-width:100%}
 </div></section>
 
 <section class="team" id="team"><div class="wrap">
-<div class="thead"><div><span class="eb">Команда</span><h2>Люди, які ведуть ваш облік</h2><p class="sub">За кожним напрямом стоїть фахівець із профільним досвідом у реальному бізнесі. Гортайте, щоб познайомитися.</p></div>
-<div class="tnav"><button class="prev" aria-label="Попередні" disabled><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 5l-7 7 7 7"/></svg></button><span id="tcount">1 / 5</span><button class="next" aria-label="Далі"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 5l7 7-7 7"/></svg></button></div></div>
-<div class="track" id="track" tabindex="0">
-<article class="tm own"><div class="tp"><img src="assets/maria.webp" width="780" height="1273" loading="lazy" alt="Марія Панченко, засновниця Happy Finance"></div><div class="ob">
-<span class="lab">Засновниця</span><h3>Марія Панченко</h3><b>Засновниця Happy Finance</b><div class="tags"><span>Фінансовий директор</span><span>Кризовий менеджер</span><span>Управлінський облік</span></div>
-<div class="more" id="omore"><p>Мій шлях почався з первинних документів ще на студентській лаві, а привів до фінансового й операційного управління, керівництва підприємствами та антикризового менеджменту.</p>
-<p>Я працювала з ресторанним бізнесом, виробництвом, дистрибуцією, роздрібною торгівлею та консалтингом. Для мене фінанси не просто звіти й податки. Це інструмент, який показує власнику реальний стан бізнесу і допомагає ухвалювати обґрунтовані рішення.</p></div>
-<button class="mtg" type="button" aria-expanded="false" aria-controls="omore">Детальніше про Марію</button>
+<div class="thead"><div><span class="eb">Команда</span><h2>Люди, які ведуть ваш облік</h2><p class="sub">За кожним напрямом стоїть фахівець із профільним досвідом у реальному бізнесі. Наведіть на фото або погортайте, щоб познайомитися.</p></div></div>
+<div class="gal" id="gal">
+<article class="gm np" tabindex="0"><span class="gic" aria-hidden="true"></span><span class="gn">Юлія Авер’янова</span><div class="gi"><h3>Юлія Авер’янова</h3><b>Бухгалтер із заробітної плати</b><p>Понад 20 років у бухгалтерії: від касира до головного бухгалтера. Останні 16 років працювала бухгалтером у ПП «ВК Технополь». Постійно вчиться і вважає, що фізичне й ментальне здоров’я важливі для якісної роботи.</p></div></article>
+<article class="gm" tabindex="0"><img src="assets/yevheniia.webp" width="600" height="750" alt="Євгенія Мазепа" loading="lazy"><span class="gn">Євгенія Мазепа</span><div class="gi"><h3>Євгенія Мазепа</h3><b>Головний бухгалтер</b><p>Починала в автомагазині, де вела первинку й допомагала з розмитненням. Працювала бухгалтером у будівельній компанії, потім була фінансовим директором у компанії з продажу підлогового покриття. Веде ТОВ на загальній системі й на єдиному податку, а також ФОП. Уже 17 років захоплюється настільними іграми.</p></div></article>
+<article class="gm own on" tabindex="0"><div class="fx">
+<div class="fr"><img src="assets/maria.webp" width="780" height="1273" alt="Марія Панченко, засновниця Happy Finance" loading="lazy"><span class="gn">Марія Панченко</span><div class="gi"><span class="lab">Засновниця</span><h3>Марія Панченко</h3><b>Засновниця Happy Finance («Радісні фінанси») · Фінансова експертка · Кризова менеджерка</b><p>Поєднує фінансову експертизу зі стратегічним та операційним баченням бізнесу.</p><button class="flip" type="button" aria-expanded="false" aria-controls="mback">Детальніше про Марію <span aria-hidden="true">↻</span></button></div></div>
+<div class="bk" id="mback"><span class="lab">Про Марію</span><h3>Марія Панченко</h3>
+<ul><li>Пройшла шлях від бухгалтерського обліку до фінансового й операційного управління та антикризового менеджменту</li><li>Ресторани, виробництво, дистрибуція, роздріб і консалтинг</li><li>Збільшила товарообіг підприємства в 4 рази</li><li>Вивела бізнес зі збитків у прибуток</li><li>Будувала системи управлінського обліку й керувала підприємством зі штатом близько 300 працівників</li></ul>
 <q>Моя мета: допомагати власникам бачити за цифрами можливості й перетворювати хаос на зрозумілу систему.</q>
-<div class="stats"><div><strong>200+</strong><span>працівників у компанії, де була фінансовим директором</span></div><div><strong>16</strong><span>філій на веденні каси й банку</span></div><div><strong>50</strong><span>людей в управлінні кав’ярнею і цехом</span></div></div>
-
+<button class="flip back" type="button"><span aria-hidden="true">←</span> Повернутися</button></div>
 </div></article>
-<article class="tm"><div class="tp"><img src="assets/yevheniia.webp" width="600" height="750" alt="Євгенія Мазепа" loading="lazy"></div><h3>Євгенія Мазепа</h3><b>Головний бухгалтер</b><p>Починала в автомагазині, де вела первинку й допомагала з розмитненням. Працювала бухгалтером у будівельній компанії, потім була фінансовим директором у компанії з продажу підлогового покриття. Веде ТОВ на загальній системі й на єдиному податку, а також ФОП. Уже 17 років захоплюється настільними іграми.</p></article>
-<article class="tm"><div class="tp"><img src="assets/karyna.webp" width="600" height="750" alt="Карина Омельченко" loading="lazy"></div><h3>Карина Омельченко</h3><b>Бухгалтер з первинних документів і ПРРО</b><p>Працювала в роздрібній торгівлі, потім бухгалтером в «Агроспецсервісі», а звідти прийшла до нас. У роботі цінує хороший колектив, баланс між роботою та сім’єю і професійний розвиток. Любить читати й гуляти.</p></article>
-<article class="tm"><div class="tp np"><img src="assets/icon.png" alt=""></div><h3>Юлія Авер’янова</h3><b>Бухгалтер із заробітної плати</b><p>Понад 20 років у бухгалтерії: від касира до головного бухгалтера. Останні 16 років працювала бухгалтером у ПП «ВК Технополь». Постійно вчиться і вважає, що фізичне й ментальне здоров’я важливі для якісної роботи.</p></article>
-<article class="tm"><div class="tp np"><img src="assets/icon.png" alt=""></div><h3>Надія Гончаренко</h3><b>Менеджер із закупівель, бухгалтер з первинних документів</b><p>Керувала відділом обліку первинних документів, де було 13 людей у трьох філіях. Має досвід у закупівлях, роботі з постачальниками та з дебіторською заборгованістю.</p></article>
+<article class="gm" tabindex="0"><img src="assets/karyna.webp" width="600" height="750" alt="Карина Омельченко" loading="lazy"><span class="gn">Карина Омельченко</span><div class="gi"><h3>Карина Омельченко</h3><b>Бухгалтер з первинних документів і ПРРО</b><p>Працювала в роздрібній торгівлі, потім бухгалтером в «Агроспецсервісі», а звідти прийшла до нас. У роботі цінує хороший колектив, баланс між роботою та сім’єю і професійний розвиток. Любить читати й гуляти.</p></div></article>
+<article class="gm np" tabindex="0"><span class="gic" aria-hidden="true"></span><span class="gn">Надія Гончаренко</span><div class="gi"><h3>Надія Гончаренко</h3><b>Менеджер із закупівель, бухгалтер з первинних документів</b><p>Керувала відділом обліку первинних документів, де було 13 людей у трьох філіях. Має досвід у закупівлях, роботі з постачальниками та з дебіторською заборгованістю.</p></div></article>
 </div>
 </div></section>
 
-<section class="vs dv"><div class="wrap">
-<span class="eb">Принципи</span><h2>У що ми віримо</h2>
-<div class="vals">
-<div><h3>Завжди є варіанти</h3><p>У будь-якій ситуації шукаємо рішення і показуємо, що вийде в цифрах за кожного з них.</p></div>
-<div><h3>Цифри замість здогадок</h3><p>Без показників керувати бізнесом неможливо. Для нас бухгалтерія це ваш спокій і безпека.</p></div>
-<div><h3>Вихідні лишаються вихідними</h3><p>Хто добре відпочиває, той добре працює. У вихідні та після 17:00 ми не працюємо, а в робочий час тримаємо і якість, і терміни.</p></div>
-</div>
-</div></section>
 
 <section class="faq" id="faq"><div class="wrap">
 <span class="eb">Питання</span><h2>Часті запитання</h2>
@@ -569,7 +640,7 @@ input,select,textarea{width:100%;min-width:0;max-width:100%}
 <form id="f" class="pane on" data-pane="quick">
 <label>Ім’я<input name="n" required autocomplete="name"></label>
 <label>Телефон<input name="p" type="tel" required autocomplete="tel" placeholder="+380"></label>
-<label>Тема консультації<select id="svc" name="s"><option value="">Поки не знаю, що обрати</option></select></label>
+<label>Обрані послуги<input id="svc" name="s" placeholder="Поки не знаю, що обрати"></label>
 <button class="btn" type="submit">Записатися на безкоштовну консультацію</button>
 <p class="fnote">Зателефонуємо в робочий час. Ваші дані не передаються третім особам.</p><p class="ok" id="ok" role="status">Дякуємо! Зателефонуємо в робочий час і домовимось про консультацію.</p>
 </form>
@@ -650,28 +721,42 @@ document.getElementById('calc').onsubmit=function(e){e.preventDefault();var f=th
 function fb(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(y){}a.remove()}
 try{navigator.clipboard.writeText(t).catch(fb)}catch(x){fb()}
 f.querySelector('button[type=submit]').style.display='none';document.getElementById('res').hidden=false};
-var tr=document.getElementById('track'),cs=[].slice.call(tr.children),tc=document.getElementById('tcount'),pv=document.querySelector('.prev'),nx=document.querySelector('.next');
-function cur(){var x=tr.scrollLeft,b=0,d=1e9;cs.forEach(function(c,i){var k=Math.abs(c.offsetLeft-x);if(k<d){d=k;b=i}});return b}
-function upd(){var end=tr.scrollLeft+tr.clientWidth>=tr.scrollWidth-4;tc.textContent=(end?cs.length:cur()+1)+' / '+cs.length;pv.disabled=tr.scrollLeft<=4;nx.disabled=end}
-tr.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);
-nx.onclick=function(){var x=tr.scrollLeft;for(var i=0;i<cs.length;i++)if(cs[i].offsetLeft>x+8){tr.scrollTo({left:cs[i].offsetLeft,behavior:'smooth'});break}};
-pv.onclick=function(){var x=tr.scrollLeft;for(var i=cs.length-1;i>=0;i--)if(cs[i].offsetLeft<x-8){tr.scrollTo({left:cs[i].offsetLeft,behavior:'smooth'});break}};
-upd();
-var ow=document.querySelector('.tm.own'),mt=ow.querySelector('.mtg');mt.onclick=function(){var o=ow.classList.toggle('x');mt.setAttribute('aria-expanded',o);mt.textContent=o?'Згорнути':'Детальніше про Марію';upd()};
+var gal=document.getElementById('gal'),gm=[].slice.call(gal.children),own=gal.querySelector('.own'),mq=matchMedia('(max-width:760px)');
+function act(c){gm.forEach(function(k){k.classList.toggle('on',k===c)});if(c!==own)flip(false)}
+function flip(o){own.classList.toggle('flp',o);own.querySelector('.flip').setAttribute('aria-expanded',o)}
+gm.forEach(function(c){c.addEventListener('mouseenter',function(){if(!mq.matches)act(c)});c.addEventListener('focusin',function(){if(!mq.matches)act(c)});c.addEventListener('click',function(){if(!mq.matches)act(c)})});
+gal.addEventListener('mouseleave',function(){if(!mq.matches)act(own)});
+own.querySelectorAll('.flip').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();act(own);flip(!own.classList.contains('flp'))})});
+function ctr(){if(mq.matches)gal.scrollLeft=own.offsetLeft-(gal.clientWidth-own.offsetWidth)/2}
+ctr();addEventListener('load',ctr);
 var fl=document.querySelectorAll('.folder');
 function openF(f,on){f.classList.toggle('open',on);f.querySelector('.fhead').setAttribute('aria-expanded',on)}
 fl.forEach(function(f){f.querySelector('.fhead').onclick=function(){var on=!f.classList.contains('open');fl.forEach(function(k){openF(k,false)});openF(f,on)};
 f.querySelectorAll('.card').forEach(function(c,i){c.style.setProperty('--d',(i*.07+.2)+'s')})});
 
 var sel=document.getElementById('svc'),pick=document.getElementById('pick'),pt=document.getElementById('pickT'),cards=document.querySelectorAll('.card');
-['fop','tov'].forEach(function(id){var g=document.createElement('optgroup');g.label=id=='fop'?'ФОП':'ТОВ';
-document.querySelectorAll('#'+id+' .card').forEach(function(c){c.dataset.s=(id=='fop'?'ФОП: ':'ТОВ: ')+c.querySelector('h3').textContent;var o=document.createElement('option');o.textContent=c.dataset.s;g.appendChild(o)});sel.appendChild(g)});
-cards.forEach(function(c){c.onclick=function(){var on=c.getAttribute('aria-pressed')!='true';
-cards.forEach(function(k){k.setAttribute('aria-pressed','false')});c.setAttribute('aria-pressed',on);
-pick.classList.toggle('show',on);sel.value=on?c.dataset.s:'';if(on)pt.textContent=c.dataset.s;cards.forEach(function(k){k.querySelector('span').textContent=k.getAttribute('aria-pressed')=='true'?'Обрано':'Обрати'})}});
+['fop','tov'].forEach(function(id){document.querySelectorAll('#'+id+' .card').forEach(function(c){c.dataset.s=(id=='fop'?'ФОП: ':'ТОВ: ')+c.querySelector('h3').textContent})});
+function pl(n){var a=n%10,b=n%100;return n+' '+(a==1&&b!=11?'послугу':(a>=2&&a<=4&&(b<12||b>14)?'послуги':'послуг'))}
+function sync(){var on=[].filter.call(cards,function(c){return c.getAttribute('aria-pressed')=='true'}).map(function(c){return c.dataset.s});
+pt.textContent=on.length==1?on[0]:pl(on.length);pt.title=on.join(', ');sel.value=on.join(', ');pick.classList.toggle('show',on.length>0)}
+cards.forEach(function(c){c.onclick=function(){var on=c.getAttribute('aria-pressed')!='true';c.setAttribute('aria-pressed',on);c.querySelector('span').textContent=on?'Обрано':'Обрати';sync()}});
 document.querySelector('.px').onclick=function(){pick.classList.remove('show')};pick.querySelector('.btn').addEventListener('click',function(){pick.classList.remove('show')});
 var st=document.querySelector('.steps');new IntersectionObserver(function(e,o){if(e[0].isIntersecting){st.classList.add('go');o.disconnect()}},{threshold:.4}).observe(st);
 
+var CC=[['380','Україна',12,12,[2,3,2,2]],['48','Польща',11,11],['49','Німеччина',11,13],['420','Чехія',12,12],['421','Словаччина',12,12],['373','Молдова',11,11],['40','Румунія',11,11],['36','Угорщина',10,11],['370','Литва',11,11],['371','Латвія',11,11],['372','Естонія',10,11],['44','Велика Британія',12,12,[4,6]],['1','США / Канада',11,11,[3,3,4]],['39','Італія',11,13],['34','Іспанія',11,11],['33','Франція',11,11,[1,2,2,2,2]],['31','Нідерланди',11,11],['32','Бельгія',10,11],['43','Австрія',10,14],['41','Швейцарія',11,11],['351','Португалія',12,12],['353','Ірландія',11,12],['46','Швеція',10,12],['47','Норвегія',10,10],['45','Данія',10,10],['358','Фінляндія',10,13],['995','Грузія',12,12],['359','Болгарія',11,12],['90','Туреччина',12,12],['972','Ізраїль',11,12],['971','ОАЕ',11,12]];
+function cty(d){for(var l=3;l>0;l--)for(var i=0;i<CC.length;i++)if(CC[i][0]===d.slice(0,l))return CC[i];return null}
+function grp(n,g){var o=[],i=0,k=0;while(i<n.length){var w=g&&g[k]?g[k]:3;o.push(n.slice(i,i+w));i+=w;k++}return o}
+document.querySelectorAll('input[type=tel]').forEach(function(el){
+var w=document.createElement('span');w.className='telw';el.parentNode.insertBefore(w,el);w.appendChild(el);var bd=document.createElement('span');bd.className='ccb';w.appendChild(bd);
+el.placeholder='+380 (__) ___ __ __';el.inputMode='tel';el.maxLength=24;
+function ap(d){d=d.replace(/\D/g,'');if(d[0]==='0')d='38'+d;var c=cty(d);d=d.slice(0,c?c[3]:15);var v='';
+if(d){if(c){var n=d.slice(c[0].length),g=grp(n,c[4]);v='+'+c[0];if(n){if(c[0]==='380'||c[0]==='1'){v+=' ('+g[0]+(g[0].length===(c[4][0])?')':'');if(g.length>1)v+=' '+g.slice(1).join(c[0]==='1'?'-':' ')}else v+=' '+g.join(' ')}}else v='+'+d}
+el.value=v;bd.textContent=c?c[1]:(d?'Код країни?':'');w.classList.toggle('has',!!bd.textContent);
+el.setCustomValidity(!d||(c&&d.length>=c[2])?'':(c?'Номер закороткий для країни '+c[1]:'Вкажіть номер з кодом країни, наприклад +380'))}
+el.addEventListener('input',function(){ap(el.value)});
+el.addEventListener('keydown',function(e){if(e.key!=='Backspace'||el.selectionStart!==el.selectionEnd)return;var p=el.selectionStart,v=el.value;if(!p||/\d/.test(v[p-1]))return;var b=v.slice(0,p).replace(/\D/g,'').length;if(!b)return;e.preventDefault();var d=v.replace(/\D/g,'');ap(d.slice(0,b-1)+d.slice(b))});
+el.addEventListener('paste',function(e){var t=(e.clipboardData||window.clipboardData).getData('text');if(!t)return;e.preventDefault();ap(t)});
+});
 document.getElementById('f').onsubmit=function(e){e.preventDefault();this.querySelector('button').style.display='none';document.getElementById('ok').style.display='block'};
 })();
 </script>
