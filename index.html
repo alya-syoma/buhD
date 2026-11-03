@@ -450,8 +450,8 @@ footer{background:#0c1d4d}
 @media(max-width:760px){
 .gal{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:32px -20px 0;padding:0 20px 24px;gap:12px}
 .gal::-webkit-scrollbar{display:none}
-.gm,.gm.on{flex:0 0 84vw;height:560px;scroll-snap-align:center;cursor:default}
-.gm .gn{display:none}.gm .gi,.own:not(.on) .gi{opacity:1;transform:none;visibility:visible;pointer-events:auto;width:100%;padding:0 20px 22px}
+.gm,.gm.on{flex:0 0 84vw;height:600px;scroll-snap-align:center;cursor:default}
+.gm .gn{display:none}.gm .gi,.own:not(.on) .gi{opacity:1;transform:none;visibility:inherit;pointer-events:auto;width:100%;padding:0 20px 22px}
 .gi h3,.bk h3{font-size:22px}.gi p{font-size:14px}
 .bk{padding:22px 20px}.bk li{font-size:13.5px}.bk ul{gap:8px}.bk q{font-size:14px}
 .gm img{filter:none}
@@ -521,6 +521,20 @@ input,select,textarea{width:100%;min-width:0;max-width:100%}
 .cfa>.rw:last-of-type,.cfb>.rw:last-of-type{margin-bottom:22px}
 .cbt:hover{transform:translateY(-2px);background:#1d3c8a}
 .cbt.bk2{background:transparent;border:1.5px solid rgba(255,255,255,.45)}.cbt.bk2:hover{background:rgba(255,255,255,.1)}
+/* v6: flip without relying on backface-visibility (iOS Safari) */
+.own .fr,.own .bk,.cfa,.cfb{transition:visibility 0s .42s}
+.own .bk{visibility:hidden;overflow:hidden}
+.own.flp .bk{visibility:visible}.own.flp .fr{visibility:hidden}
+.cfb{visibility:hidden}.cf.flp .cfb{visibility:visible}.cf.flp .cfa{visibility:hidden}
+.own .fr,.own .bk,.cfa,.cfb{-webkit-transform-style:flat;transform-style:flat}
+@media(max-width:760px){
+.gal{align-items:stretch}
+.gm,.gm.on{height:auto;min-height:600px}
+.own .fx{position:relative;inset:auto;display:grid;min-height:600px;height:100%}
+.own .fr,.own .bk{position:relative;inset:auto;grid-area:1/1}
+.own .fr{min-height:600px}
+.own .bk q{margin-top:16px}
+}
 </style></head>
 <body>
 <nav><div class="wrap">
