@@ -460,6 +460,13 @@ footer{background:#0c1d4d}
 .telw.has input{padding-right:130px}
 .ccb{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--navy);background:var(--beige);border-radius:999px;padding:4px 10px;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;max-width:120px;overflow:hidden;text-overflow:ellipsis}
 .telw.has .ccb{opacity:1}
+/* to top */
+.totop{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:19;width:48px;height:48px;border:0;border-radius:50%;display:grid;place-items:center;color:#fff;cursor:pointer;background:linear-gradient(135deg,#FB6835,#ff8b50);box-shadow:0 12px 26px -10px rgba(251,104,53,.8),0 0 0 3px rgba(255,255,255,.9);opacity:0;visibility:hidden;transform:translateY(16px) scale(.9);transition:opacity .3s,transform .4s cubic-bezier(.2,.9,.3,1),visibility 0s .4s,bottom .45s cubic-bezier(.2,.9,.3,1)}
+.totop.show{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.totop:hover{transform:translateY(-3px)}
+.totop svg{width:22px;height:22px}
+body.pk .totop{bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+@media(max-width:600px){.totop{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:44px;height:44px}body.pk .totop{bottom:calc(150px + env(safe-area-inset-bottom,0px))}}
 /* mobile fixes */
 @media(max-width:860px){.hero .hcard{justify-self:center;width:100%;max-width:340px}.hero .wrap{padding-bottom:72px}}
 @media(max-width:600px){.hero h1{font-size:clamp(34px,10.2vw,46px)}}
@@ -664,6 +671,7 @@ input,select,textarea{width:100%;min-width:0;max-width:100%}
 <div class="res" id="res" hidden><p><b>Дякуємо, анкету заповнено.</b> Щоб ми отримали її відразу, надішліть її нам у Telegram. Текст уже скопійовано, залишиться вставити його в чат.</p><a class="btn" id="tg" href="https://t.me/MariiaPanchenko_ua" target="_blank" rel="noopener">Відкрити Telegram</a></div>
 </form></div>
 </div></section>
+<button class="totop" type="button" aria-label="Нагору"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <footer><div class="wrap fg">
 <div><img class="flogo" src="assets/logo-footer.png" width="336" height="128" loading="lazy" alt="Happy Finance, фінансово-бухгалтерський супровід"><p>Бухгалтерський і фінансовий супровід ФОП та ТОВ. Облік, у якому власник бачить реальну картину бізнесу.</p></div>
 <div><h4>Розділи</h4><a href="#services">Послуги</a><a href="#team">Команда</a><a href="#faq">Питання</a><a href="#contact">Контакти</a></div>
@@ -757,6 +765,9 @@ el.addEventListener('input',function(){ap(el.value)});
 el.addEventListener('keydown',function(e){if(e.key!=='Backspace'||el.selectionStart!==el.selectionEnd)return;var p=el.selectionStart,v=el.value;if(!p||/\d/.test(v[p-1]))return;var b=v.slice(0,p).replace(/\D/g,'').length;if(!b)return;e.preventDefault();var d=v.replace(/\D/g,'');ap(d.slice(0,b-1)+d.slice(b))});
 el.addEventListener('paste',function(e){var t=(e.clipboardData||window.clipboardData).getData('text');if(!t)return;e.preventDefault();ap(t)});
 });
+var tt=document.querySelector('.totop');function tq(){tt.classList.toggle('show',scrollY>innerHeight*.8)}addEventListener('scroll',tq,{passive:true});tq();
+tt.onclick=function(){scrollTo({top:0,behavior:'smooth'});tt.blur()};
+new MutationObserver(function(){document.body.classList.toggle('pk',pick.classList.contains('show'))}).observe(pick,{attributes:true,attributeFilter:['class']});
 document.getElementById('f').onsubmit=function(e){e.preventDefault();this.querySelector('button').style.display='none';document.getElementById('ok').style.display='block'};
 })();
 </script>
